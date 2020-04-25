@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Zendesk Widget Playground</title>
+    
+  </head>
+
+    <script type="text/javascript">
+      window.zESettings = {
+	  webWidget: {
+	      answerBot: {
+		  avatar: {
+		      url: './xsey.png',
+		      name: {
+			  '*': 'Zendesk Bot'
+		      }
+		  }
+	      }
+	  }
+      };
+    </script>
+
+<script type="text/javascript">
+  window.zE('webWidget', 'helpCenter:setSuggestions', { search: 'credit card' });
+</script>
+    
+  <body>
+    <h3>This is the wrapper page for testing the Zendesk widget.</h3>
+
+    <!-- Start of edxsupport Zendesk Widget script -->
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=41d731a2-b733-492b-b5af-2b2eeb1f1eec"> </script>
+    <!-- End of edxsupport Zendesk Widget script -->
+    
+</body
