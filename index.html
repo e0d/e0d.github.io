@@ -1,33 +1,96 @@
 <html>
   <head>
     <title>Zendesk Widget Playground</title>
-    
   </head>
 
-    <script type="text/javascript">
-      window.zESettings = {
-	  webWidget: {
-	      answerBot: {
-		  avatar: {
-		      url: './xsey.png',
-		      name: {
-			  '*': 'Zendesk Bot'
-		      }
-		  }
-	      }
-	  }
-      };
+  <script type="text/javascript">
+    // TODO:
+    // ☐ pass translated strings into configuration
+    // ☐ ideally use our css
+    // ☐ access configuration for details like the ticket form
+    // ☐ see if there's a way to disable attachments on the server-side
+    // ☐ prefill forms
+    // ☐
+    // ☐
+    // ☐
+    // ☐
+    // ☐
+    //
+
+    window.zESettings = {
+
+	webWidget: {
+	    chat: {
+		prechatForm: {
+		    greeting: {
+			'*': 'Please fill out the form below to chat with us',
+			fr: "S'il vous plaît remplir le formulaire ci-dessous pour discuter avec nous"
+		    }
+		}
+	    },
+	    answerBot: {
+		contactOnlyAfterQuery: true,
+		avatar: {
+		    url: './xsey.png',
+		    name: {
+			'*': 'Xsey'
+		    },
+		    
+		}
+	    },
+	    contactOptions: {
+		enabled: true,
+		contactButton: { '*': 'Contact us' }
+	    },
+	    color: {
+		theme: '#007db8',
+		launcher: '#007db8', // This will also update the badge
+		launcherText: '#ffffff',
+		button: '#007db8',
+		resultLists: '#691840',
+		header: '#203D9D',
+		articleLinks: '#FF4500'
+	    },
+	    contactForm: {
+		attachments: false,
+		ticketForms: [{ id: 172807 }]
+	    }
+	}
+    };
+  </script>
+
+  <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=41d731a2-b733-492b-b5af-2b2eeb1f1eec"> </script>
+    
+  <script>
+    
+    //zE('webWidget', 'helpCenter:setSuggestions', { search: 'credit card' });
+    
+    // By default Zendesk will use the browser locale.  In my cases that means that
+    // I see Zendesk in English and edX in Spanish.  We hopefully can set the
+    // Zendesk locale to follow edX
+    // zE('webWidget', 'setLocale', 'de');
+
+    
+    var prefill = {
+	// name: {
+	//     value: 'EdX Learner',
+	//     readOnly: true // optional
+	// },
+	email: {
+	    value: 'learner@example.com',
+	    readOnly: true
+	},
+	// This seems to be the name in the HTML, but it is not working
+	'27215768': {
+	    value: 'course-v1:HarvardX+COV19x+1T2020',
+	    readOnly: true
+	},
+    };
+    
+    zE('webWidget', 'prefill', prefill);
     </script>
 
-<script type="text/javascript">
-  window.zE('webWidget', 'helpCenter:setSuggestions', { search: 'credit card' });
-</script>
-    
   <body>
     <h3>This is the wrapper page for testing the Zendesk widget.</h3>
 
-    <!-- Start of edxsupport Zendesk Widget script -->
-    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=41d731a2-b733-492b-b5af-2b2eeb1f1eec"> </script>
-    <!-- End of edxsupport Zendesk Widget script -->
-    
 </body
