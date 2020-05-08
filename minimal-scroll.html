@@ -1,0 +1,165 @@
+<html>
+  <head>
+    <title>Zendesk Widget Playground</title>
+    <style>
+
+      p {
+	  max-width: 300px;
+      }
+    </style>
+
+  </head>
+
+  <script type="text/javascript">
+    // TODO:
+    // ☐ pass translated strings into configuration
+    // ☐ ideally use our css
+    // ☐ access configuration for details like the ticket form
+    // ☐ see if there's a way to disable attachments on the server-side
+    // ☐ prefill forms
+    // ☐
+    // ☐
+    // ☐
+    // ☐
+    // ☐
+    //
+
+    window.zESettings = {
+
+	webWidget: {
+	    helpCenter: {
+		messageButton: {
+		    '*': 'Contact us'
+		}
+	    },
+	    chat: {
+		prechatForm: {
+		    greeting: {
+			'*': 'Please fill out the form below to chat with us',
+			fr: "S'il vous plaît remplir le formulaire ci-dessous pour discuter avec nous"
+		    }
+		}
+	    },
+	    answerBot: {
+		suppress: true
+	    },
+	    contactOptions: {
+		enabled: true,
+		contactButton: { '*': 'Contact us' }
+	    },
+	    color: {
+		theme: '#007db8',
+		launcher: '#007db8', // This will also update the badge
+		launcherText: '#ffffff',
+		button: '#007db8',
+		resultLists: '#691840',
+		header: '#203D9D',
+		articleLinks: '#FF4500'
+	    },
+	    contactForm: {
+		attachments: false,
+		ticketForms: [{ id: 172807 }]
+	    }
+	}
+    };
+  </script>
+
+  <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=41d731a2-b733-492b-b5af-2b2eeb1f1eec"> </script>
+    
+  <script>
+    
+    zE('webWidget', 'helpCenter:setSuggestions', { search: 'tags:bot-suggestions' });
+    
+    // By default Zendesk will use the browser locale.  In my cases that means that
+    // I see Zendesk in English and edX in Spanish.  We hopefully can set the
+    // Zendesk locale to follow edX
+    // zE('webWidget', 'setLocale', 'de');
+
+    
+    var prefill = {
+	// name: {
+	//     value: 'EdX Learner',
+	//     readOnly: true // optional
+	// },
+	email: {
+	    value: 'learner@example.com',
+	    readOnly: true
+	},
+	// This seems to be the name in the HTML, but it is not working
+	'27215768': {
+	    value: 'course-v1:HarvardX+COV19x+1T2020',
+	    readOnly: true
+	},
+    };
+    
+    zE('webWidget', 'prefill', prefill);
+    </script>
+
+  <body>
+    <h3>This is the wrapper page for testing the Zendesk widget.</h3>
+
+    <p>
+      Lorem ipsum dolor sit amet, est ex meis quaeque accusata. Eu congue viderer delicatissimi mea, in sea dicunt inermis consequat, et consequat omittantur sit. No velit epicurei rationibus vim. Eos at cetero labores. Est delectus assentior eu, dolor suscipit oporteat te nam.
+    </p>
+    <p>
+      Vim ei omnes gubergren, quis assum praesent vel eu. Et sale inermis sed, has ad justo homero inciderint. Sea eu choro definitiones, an vim mutat blandit assueverit, noster persecuti cu vim. Et est quem hinc phaedrum, has no tractatos partiendo constituto. Eos in possit efficiendi dissentiet.
+    </p>
+    <p>
+      Eam et nisl ornatus deseruisse. Id mei adhuc sapientem moderatius. Pri case perpetua appellantur ut, inani dolores ne mea. At per malis erant quaestio, reque meliore ut per, mucius deserunt necessitatibus at ius. Illud molestie delicata his ex, usu ad pericula signiferumque, aeque doming evertitur per ea. Quo nobis graeco in, esse electram rationibus nec in.
+    </p>
+    <p>
+      Stet iusto noluisse eu sea. Usu no possim adipisci, et nam tamquam volutpat. Reque putant mei cu. Te mundi voluptua erroribus eos, ius ea dicant qualisque.
+    </p>
+    <p>
+      Vim modus convenire constituam ea, est audiam virtute ei, ut est vitae propriae constituam. Pri eu principes inciderint interpretaris. Adipiscing definitionem per ex. Ex probo dolorem concludaturque duo, vis verterem invenire et. Corrumpit posidonium an vim, putent civibus id est.
+    </p>
+    <p>
+      Cum tota mnesarchum ei, alia doctus adolescens eam id. Id alia possim vidisse quo, per quidam dissentiet in. Tibique probatus aliquando cu quo. Pri meis illud an. Pri hinc animal et, sale soleat eos in, nisl efficiendi disputationi nam at.
+    </p>
+    <p>
+      Mel ei graecis deleniti appetere. Nec ex agam idque, lorem aperiam in pri. Ea graecis fabellas nam, utinam aliquam imperdiet duo at, ea has verear delectus. Eu mea cibo regione vituperatoribus, mei eu invidunt corrumpit.
+    </p>
+    <p>
+      An patrioque theophrastus suscipiantur nec. Mea omnis democritum in, sit alii verterem periculis ad. Forensibus deterruisset eu qui, at vim noster dolorum denique. Adipisci consulatu cu sit, ut eros habeo nam. Ea malorum verterem inciderint mel, vis novum docendi probatus ad. Exerci tincidunt ex usu.
+    </p>
+    <p>
+      Nec virtute utroque repudiare ut, duo id timeam noluisse. Est at audiam recteque intellegat. Modus vocibus iracundia no nam, eam possit volutpat ei. Labore audire has eu, vis in eligendi oporteat.
+    </p>
+    <p>
+      At sonet iracundia eum, etiam officiis salutatus vim an. At sit viderer eligendi. Alii partem ancillae at his, virtute persecuti et nec. Ad sea sumo nemore, usu in debet pertinax. Id nam zril malorum vulputate.
+    </p>
+    <p>
+      Ex nam decore exerci essent, ad sea recusabo vituperata. Ad his novum appetere indoctum, quo fuisset accumsan consequat et, ex aeque choro similique duo. Mei cu assum dictas, eam labore mnesarchum moderatius at. Ex sed detracto nominati principes, eu pro iudico possit iuvaret. Quo dicat dicant et, id prima posse sea, vocibus eligendi quo ea.
+    </p>
+    <p>
+      Minim ornatus perpetua ius te, in quo erant bonorum civibus. Case meis necessitatibus ex vix, te vix forensibus moderatius philosophia, dolores molestiae sit te. Integre antiopam cu qui, id petentium conceptam philosophia ius. Et mazim expetendis qui, sale percipitur inciderint et sea, cu cum aperiam molestiae contentiones. His aliquip ponderum ne, eius incorrupte deterruisset nec ex.
+    </p>
+    <p>
+      Unum posse impetus quo in, at tollit quaestio usu. Case ludus cu sea, nam argumentum intellegam dissentias cu. Mandamus instructior nam id, vel ad posse discere. Te quem case dissentiunt mea.
+    </p>
+    <p>
+      Ut eos quod aliquip, at fastidii consulatu mea, mei ne graece nusquam periculis. Ius id commune omnesque corrumpit, homero mentitum intellegam per ei, ut vis diceret denique expetendis. In stet dignissim temporibus per. No omnes iisque nam, aperiam appellantur consectetuer ne mei.
+    </p>
+    <p>
+      Mel an dolor oratio, adhuc aperiri an eos, tale habemus adolescens ex mei. Mel ea utinam tempor electram, voluptatum disputando ut sed, et usu voluptaria conclusionemque. Ea semper principes nam, nam maluisset accusamus interpretaris at. Ut vero rebum referrentur quo, facete aliquip legimus at vim. Dolorum verterem referrentur vim an, quidam facete perfecto mei ex. An copiosae ocurreret vim, mei ex nulla menandri eleifend.
+    </p>
+    <p>
+      Omnium feugiat scribentur pro no, ei mel utamur nostrum. An qui tale autem, putent corrumpit ea sea. Soleat nominati has ex, eu graeci iisque mei, at vim sale mutat. Eum vitae melius salutatus cu, qui an honestatis disputationi. Te vis regione appellantur, id vel errem graece, harum populo intellegam eu mei.
+    </p>
+    <p>
+      An nibh tibique omittantur mei, no vix tale equidem gubergren. Est no error fuisset omnesque, ex reque nostrum vim, deleniti assentior in nam. Est ei libris graeci pericula. Quodsi iisque eleifend his eu, everti dolorem offendit te mea, legere officiis ad nec. Vero quas verterem id mel. At eam option scripta habemus, ad solet iudicabit consetetur ius, ius et modus sententiae. At molestie accusata vim.
+    </p>
+    <p>
+      Molestie aliquando pertinacia vis no, sea ne erat placerat, ad cum duis fugit. Duis primis graeco ut mei, euismod vivendum quo ad. Ex vim case putant dictas, eam inani ceteros et, vim id dicunt melius appetere. Ius clita gloriatur ne, vix esse fabulas ne, eum postea neglegentur ex.
+    </p>
+    <p>
+      Agam consequat pro cu, nec meis consectetuer ut. Cu veniam tibique per. Debet partiendo ei mea, ne alia prompta suavitate est, nihil tantas te pri. Pro equidem luptatum repudiare no, ea dicta aliquam recteque vel.
+    </p>
+    <p>
+      Pro urbanitas assueverit id, his ex assum torquatos. Vel aliquid equidem in. Ea his iuvaret impedit tacimates, menandri mnesarchum no sea, quem accusam antiopam his et. Ne vel utamur aperiri. Animal tibique intellegebat at vis, in mea sale laoreet.
+    </p>
+    <p>
+      Dolor postulant posidonium cum ut, no sed regione nominavi posidonium. Eirmod detracto eos an, ex sea tempor postea patrioque. Ne sea altera mucius sapientem, ut pro facilis periculis. Mei in mollis nostrud, ex facilis maluisset vel. Eam et cibo diceret urbanitas, quo assum constituam in. An esse nusquam per, nec stet graeco necessitatibus cu.
+    </p>
+    
+  </body>
